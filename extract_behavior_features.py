@@ -6,7 +6,7 @@ image_dir = 'datasets/raw/images'
 output_csv = 'behavior_features.csv'
 
 PERSON_CLASS = '0'
-BAG_CLASSES = ['24', '26', '28', '31', '39', '56', '62', '63', '66', '73']  # expand as needed
+BAG_CLASSES = ['24', '26', '28', '31', '39', '56', '62', '63', '66', '73']
 
 data = []
 
