@@ -10,21 +10,21 @@ import joblib
 from collections import deque
 from time import time
 
+# === Load Models ===
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s', trust_repo=True)
 model.conf = 0.3
 
 classifier = joblib.load('shoplifting_classifier_lgbm.pkl')
 scaler = joblib.load('shoplifting_scaler_lgbm.pkl')
 
+# === Class Settings ===
 PERSON_CLASS = 0
 BAG_CLASSES = [24, 26, 28, 31, 39, 56, 62, 63, 66, 73]
 
+# === Open Video ===
 cap = cv2.VideoCapture("demo.mp4")
 frame_buffer = deque(maxlen=30)
 predictions = []
-
-start_time = time()
-frame_counter = 0
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -83,8 +83,12 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 
+# === Final Output Threshold (70%) ===
 ratio = predictions.count(1) / len(predictions) if predictions else 0
-final_decision = "SHOPLIFTING DETECTED" if ratio > 0.3 else "NORMAL BEHAVIOR"
+threshold = 0.6
+final_decision = "SHOPLIFTING DETECTED" if ratio >= threshold else "NORMAL BEHAVIOR"
+
+# === Final Summary Screen ===
 final_frame = np.zeros((300, 600, 3), dtype=np.uint8)
 color = (0, 0, 255) if "SHOPLIFTING" in final_decision else (0, 255, 0)
 
