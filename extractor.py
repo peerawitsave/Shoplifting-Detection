@@ -7,7 +7,7 @@ output_dir = 'datasets/images'
 
 os.makedirs(output_dir, exist_ok=True)
 
-frame_interval = 5  # Save every 5th frame
+frame_interval = 5
 img_count = 0
 
 for label_id, category in enumerate(categories):

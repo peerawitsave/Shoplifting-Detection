@@ -2,6 +2,7 @@
 numpy==1.26.4
 pandas==2.2.1
 matplotlib==3.8.4
+seaborn==0.13.2
 tqdm==4.66.2
 
 # OpenCV for video frame extraction
@@ -15,9 +16,11 @@ ultralytics==8.1.30  # for YOLOv8 if needed too
 # Machine Learning
 scikit-learn==1.4.1
 xgboost==2.0.3
+lightgbm==4.3.0
 
 # Image handling
 Pillow==10.2.0
 
 # File handling
 pyyaml==6.0.1
+joblib==1.4.0
