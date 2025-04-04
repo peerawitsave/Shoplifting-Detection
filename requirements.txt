@@ -1,0 +1,23 @@
+# Core libraries
+numpy==1.26.4
+pandas==2.2.1
+matplotlib==3.8.4
+tqdm==4.66.2
+
+# OpenCV for video frame extraction
+opencv-python==4.10.0.82
+
+# YOLOv5 + Torch
+torch==2.2.1
+torchvision==0.17.1
+ultralytics==8.1.30  # for YOLOv8 if needed too
+
+# Machine Learning
+scikit-learn==1.4.1
+xgboost==2.0.3
+
+# Image handling
+Pillow==10.2.0
+
+# File handling
+pyyaml==6.0.1
