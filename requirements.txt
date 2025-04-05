@@ -14,7 +14,7 @@ torchvision==0.17.1
 ultralytics==8.1.30  # for YOLOv8 if needed too
 
 # Machine Learning
-scikit-learn==1.4.1
+scikit-learn==1.4.1.post1
 xgboost==2.0.3
 lightgbm==4.3.0
 
